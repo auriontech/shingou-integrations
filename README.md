@@ -41,6 +41,21 @@ All integrations in this repo follow the same rules, so you can audit exactly wh
 - **Honesty markers**: `reconstructed: true` buckets and free-tier delays are surfaced,
   not hidden.
 
+## Alerts: Telegram (no code)
+
+A free public feed of the Shingou signal: direction flips on supported pairs and
+high-severity typed events (hacks, regulation, delistings, legal). It is
+deliberately quiet, roughly ten high-conviction alerts a day, and every alert
+carries its source links so you can judge the story yourself.
+
+- **Telegram:** [t.me/shingou_alerts](https://t.me/shingou_alerts)
+
+Under the hood it is a tiny hourly worker reading the same public API you can
+call (`/v1/sentiment` for flips, `/v1/events` for the typed stream) and pushing
+whatever clears a confidence floor. Nothing in the feed is trade advice. It
+exists so you can watch the indicator work before wiring the API into your own
+strategy (see the Freqtrade and Jesse examples above).
+
 ## License
 
 MIT — see [LICENSE](LICENSE). The integrations are free distribution; the subscription
